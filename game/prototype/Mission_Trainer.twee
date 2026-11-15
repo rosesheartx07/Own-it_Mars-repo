@@ -1,0 +1,787 @@
+:: StoryTitle
+Mission Trainer
+
+
+:: StoryData
+{
+  "ifid": "A875A5F7-E5C9-4091-9ABA-902684F325DE",
+  "format": "Harlowe",
+  "format-version": "3.3.9",
+  "start": "START",
+  "tag-colors": {
+    "startup": "yellow",
+    "header": "blue",
+    "Setup": "green"
+  },
+  "zoom": 1
+}
+
+
+:: Credits {"position":"1875,200","size":"100,100"}
+SOURCES AND CREDITS
+
+All science in this game comes from official sources. The numbers (chances and costs) are game design values, not NASA data.
+
+NASA / JPL-Caltech: "Large Solar Storm Sparks Global Aurora and Doubles Radiation Levels on the Martian Surface".
+
+Canadian Space Agency: Spacewalks; Growing food in space (Advanced Plant Habitat); Robotics mission control centre; Why do we conduct science experiments in space?
+
+Part of the Canadian Space Agency content describes the International Space Station. The game uses it to explain ideas that also apply to future missions. NASA does not endorse any non-U.S. Government entity.
+
+[[Back to map->Mars Map]]
+
+
+:: Crater Expedition {"position":"2650,900","size":"100,100"}
+The science team needs data on how the body handles radiation out here. The detectors are set up, and the data is waiting to be collected.
+
+How do you do the expedition?
+
+[[Wear your suit and stay longer. You bring back some of the data, but you're exposed to radiation and lose some health.->Crater Suit]]
+
+[[Stay without the radiation shield. You bring back all of the data, but you lose almost all your health.->Crater NoSuit]]
+
+[[Leave right now. You stay safe, but you bring back no data.->Crater Leave]]
+
+
+:: Crater Leave {"position":"2875,1075","size":"100,100"}
+(set: $expedition_done to true)
+
+You head back right away and stay safe. The detectors stay where they are, and the team has no new data.
+
+[[Back to map->Mars Map]]
+
+
+:: Crater NoSuit {"position":"2700,1075","size":"100,100"}
+(set: $expedition_done to true)
+(set: $roll to (random: 1, 100))
+
+You stay out without the shield until every detector has finished.
+
+(if: $roll <= 50)[
+(set: $health to 0)
+
+The radiation hits you hard. Your health runs out and the mission has to stop.
+
+[[Continue->Game Over]]
+]
+(else:)[
+(set: $data to it + 5)
+(set: $health to it - 4)
+(set: $energy to it - 1)
+
+You bring back all the data, but the radiation leaves you weak and dizzy. You were lucky this time.
+
+(if: $health <= 0)[(goto: "Game Over")]
+(else:)[[[Go to the lab->Investigation Tent]]]
+]
+
+
+:: Crater Suit {"position":"2575,1075","size":"100,100"}
+(set: $expedition_done to true)
+(set: $data to it + 3)
+(set: $health to it - 1)
+(set: $energy to it - 1)
+(set: $equipment to it - 1)
+
+You work for hours with your suit on. The detectors collect a good amount of data. The suit blocks part of the radiation, not all of it, and your health drops a little.
+
+(if: $health <= 0)[(goto: "Game Over")]
+(else:)[[[Go to the lab->Investigation Tent]]]
+
+
+:: Disconnect All {"position":"1375,1100","size":"100,100"}
+(set: $storm_done to true)
+
+(set: $food to it - 2)
+(set: $energy to it - 2)
+(set: $crew to it - 1)
+(set: $food_lost to true)
+(set: $roll to (random: 1, 100))
+
+You turned everything off. The base stayed dark and cold all night, and the food in the freezer spoiled.
+
+(if: $roll <= 30)[
+(set: $equipment to it - 1)
+(set: $equipment_damaged to true)
+
+A small surge still reached the base, and one machine stopped working.
+]
+(else:)[
+The equipment came through the storm fine.
+]
+
+[[Back to map->Mars Map]]
+
+
+:: Disconnect Science {"position":"1650,1100","size":"100,100"}
+(set: $storm_done to true)
+
+(set: $energy to it - 1)
+(set: $data to (max: 0, it - 1))
+(set: $data_lost to true)
+(set: $roll to (random: 1, 100))
+
+You shut down the science instruments and kept the essentials on. Tonight's data is lost.
+
+(if: $roll <= 30)[
+(set: $equipment to it - 1)
+(set: $equipment_damaged to true)
+
+A small surge still got through, and one machine stopped working.
+]
+(else:)[
+Nothing else was damaged.
+]
+
+[[Back to map->Mars Map]]
+
+
+:: Expedition {"position":"2600,700","size":"100,100"}
+<div class="scene">
+<div class="scene-image scene-image-crater"></div>
+<div class="scene-text">
+INVESTIGATION CRATER
+
+A huge round hole in the ground with steep rocky walls. Scientists come here to study how space affects the human body, and to find ways to treat and prevent the problems. The goal is to make space travel safer.
+
+Missions to the Moon and Mars are longer, and that brings more risks:
+
+1. More time floating in weightlessness.
+2. More exposure to radiation.
+3. Longer delays when talking to Earth.
+4. Less help from Earth with food, supplies, and emergency medical care.
+</div>
+<small>Source: Canadian Space Agency, "Why do we conduct science experiments in space?"</small>
+<div class="scene-buttons">
+(if: $expedition_done is true)[
+The expedition is over.
+
+[[Go to the lab->Investigation Tent]]
+]
+(else:)[
+[[Start the expedition->Crater Expedition]]
+]
+[[Back to map->Mars Map]]
+</div>
+</div>
+
+
+:: Game Over {"position":"2775,1300","size":"100,100"}
+GAME OVER
+
+You ran out of health, so the mission is over. Astronauts train for this: every failed mission teaches the next crew what to protect.
+
+Remember: in space, every choice has a cost. Start again and choose differently.
+
+(link: "Try the mission again")[(reload:)]
+
+
+:: Garage Coordination {"position":"2325,1025","size":"100,100"}
+(set: $garage_done to true)
+(set: $energy to it - 1)
+(set: $roll to (random: 1, 100))
+
+The path is planned and the software is up to date.
+
+(if: $roll <= 40)[
+(set: $comms_dip to true)
+(set: $energy to it - 1)
+
+When the arm starts moving, it pulls a lot of power. The radio and the lights go out for a while, because nobody planned for it.
+]
+(else:)[
+The power held up this time. Nobody checked how the arm would affect the other systems.
+]
+
+[[Back to map->Mars Map]]
+
+
+:: Garage Full {"position":"2075,1025","size":"100,100"}
+(set: $garage_done to true)
+(set: $energy to it - 1)
+(set: $equipment to (min: 5, it + 1))
+
+
+You spend the day on every step. The systems are lined up, the cameras are placed, and the software is up to date. The arm moves the part without a problem.
+
+The base is low on energy tonight.
+
+[[Back to map->Mars Map]]
+
+
+:: Garage Software {"position":"2200,1025","size":"100,100"}
+(set: $garage_done to true)
+(set: $energy to it - 1)
+(set: $roll to (random: 1, 100))
+
+The systems are lined up and the arm's path is planned.
+
+(if: $roll <= 40)[
+(set: $robot_glitch to true)
+(set: $equipment to it - 1)
+
+Halfway through the job, the robot's software freezes. The arm stops in the middle of the move, and you have to restart it before it can finish.
+]
+(else:)[
+The old software held up this time. It's still overdue for an update.
+]
+
+[[Back to map->Mars Map]]
+
+
+:: Greenhouse {"position":"1025,625","size":"100,100"}
+GREENHOUSE
+
+A long room with plants growing under bright purple lights. There's lettuce, potatoes, and radishes in trays, with pipes that carry water to each row.
+
+This is where the crew gets part of its fresh food.
+
+<small>Source: Canadian Space Agency, "Growing food in space" (Advanced Plant Habitat).</small>
+
+[[Check the plants->Greenhouse Mission]]
+
+[[Back to map->Mars Map]]
+
+
+:: Greenhouse Cold {"position":"1150,900","size":"100,100"}
+(set: $greenhouse_done to true)
+(set: $roll to (random: 1, 100))
+
+The humidity and lights are set to shut down overnight to save energy and the room gets colder overnight.
+
+(if: $roll <= 50)[
+(set: $plants_stunted to true)
+(set: $food to it - 2)
+
+The cold slows the plants down. They stop growing, and the harvest will be much smaller.
+]
+(else:)[
+The plants made it through the cold. They look a little pale, but they're alive.
+]
+
+[[Back to map->Mars Map]]
+
+
+:: Greenhouse Humid {"position":"1025,900","size":"100,100"}
+(set: $greenhouse_done to true)
+(set: $energy to it - 1)
+(set: $roll to (random: 1, 100))
+
+The temperature and lights are set but the astronaut missed the humidity and the air stays too damp.
+
+(if: $roll <= 50)[
+(set: $mold_found to true)
+(set: $food to it - 2)
+
+By evening there's mold on one of the trays. You have to throw out the whole tray.
+]
+(else:)[
+The plants handled the extra moisture. Nothing grew on them this time, but the risk is still there.
+]
+
+[[Back to map->Mars Map]]
+
+
+:: Greenhouse Mission {"position":"1025,750","size":"100,100"}
+(if: $greenhouse_done is true)[
+The greenhouse is stable for now.
+
+[[Back to map->Mars Map]]
+]
+(else:)[
+The panel shows three readings drifting: temperature, humidity, and lighting.
+
+You can set all three right, but it would use most of the energy you have left.
+
+[[Control all three. The plants get perfect conditions and a full harvest, but it uses a lot of energy.->Greenhouse perfect]]
+
+[[Fix the temperature and the lighting. The humidity stays off, and there's a chance mold grows on a tray.->Greenhouse Humid]]
+
+[[Fix the humidity and the lighting. The temperature stays off, and there's a chance the cold stunts the plants.->Greenhouse Cold]]
+]
+
+
+:: Greenhouse perfect {"position":"900,900","size":"100,100"}
+(set: $greenhouse_done to true)
+(set: $energy to it - 1)
+(set: $food to (min: 5, it + 1))
+
+All the settings are perfect but it uses too much energy. The plants keep growing and the harvest is great.
+
+[[Back to map->Mars Map]]
+
+
+:: Habitat {"position":"400,825","size":"100,100"}
+HABITAT
+
+This is where the crew lives and sleeps. It's a sealed building with bunks, a small kitchen, and a control panel for air and power.
+
+Along the back wall are the systems that keep everyone alive: the heating and air equipment, the computers, and the radio and navigation gear. They all need regular maintenance.
+
+<small>Source: Canadian Space Agency, "Spacewalks".</small>
+
+[[Check the maintenance panel->Habitat Mission]]
+
+[[Back to map->Mars Map]]
+
+
+:: Habitat Full {"position":"225,1100","size":"100,100"}
+(set: $habitat_done to true)
+(set: $energy to it - 2)
+
+You spend the afternoon checking every system, changing filters, and updating the computers. Everything passes.
+
+Maintenance like this takes up a big part of an astronaut's time and energy on the space station.
+
+[[Back to map->Mars Map]]
+
+
+:: Habitat Mission {"position":"400,950","size":"100,100"}
+(if: $habitat_done is true)[
+The maintenance is done for today.
+
+[[Back to map->Mars Map]]
+]
+(else:)[
+The panel shows three systems due for service: temperature and life support, the computer network, and communication and navigation.
+
+Servicing everything uses a lot of energy. A system that isn't serviced might fail, and a failure in any of them could put the whole base at risk.
+
+[[Service everything. It uses a lot of energy, but nothing fails.->Habitat Full]]
+
+[[Service only the life support. It uses less energy, but there's a 50% chance the computers or communications fail.->Habitat Partial]]
+
+[[Skip the maintenance. It saves energy, but there's a 60% chance that life support, the computers, or communications fail.->Habitat Skip]]
+]
+
+
+:: Habitat Partial {"position":"375,1100","size":"100,100"}
+(set: $habitat_done to true)
+(set: $energy to it - 1)
+(set: $roll to (random: 1, 100))
+
+You service the heating and air systems. They're ready to run.
+
+(if: $roll <= 25)[
+(set: $network_failed to true)
+(set: $equipment to it - 1)
+
+That night the computer network crashes. The control panel goes blank, and the crew has to run the base by hand until it's rebooted.
+]
+(else-if: $roll <= 50)[
+(set: $comms_failed to true)
+(set: $equipment to it - 1)
+
+Communication and navigation go down. The base can't reach Earth, and the rover can't find its way back until it's fixed.
+]
+(else:)[
+Nothing else breaks this time. The other systems are still overdue for service.
+]
+
+[[Back to map->Mars Map]]
+
+
+:: Habitat Skip {"position":"525,1100","size":"100,100"}
+(set: $habitat_done to true)
+(set: $roll to (random: 1, 100))
+
+You leave the maintenance for later.
+
+(if: $roll <= 20)[
+(set: $thermo_failed to true)
+(set: $crew to it - 2)
+(set: $energy to it - 1)
+
+The heating and air system stops. The temperature drops and the air gets stale. The crew works through the night to restart it. A failure like this could cost the whole base.
+]
+(else-if: $roll <= 40)[
+(set: $network_failed to true)
+(set: $equipment to it - 1)
+
+The computer network crashes. The control panel goes blank, and the crew has to run the base by hand until it's rebooted.
+]
+(else-if: $roll <= 60)[
+(set: $comms_failed to true)
+(set: $equipment to it - 1)
+
+Communication and navigation go down. The base can't reach Earth, and the rover can't find its way back until it's fixed.
+]
+(else:)[
+Nothing breaks this time. The systems still need service, and the risk is still there.
+]
+
+[[Back to map->Mars Map]]
+
+
+:: Investigation Tent {"position":"2575,1200","size":"100,100"}
+INVESTIGATION LAB
+
+A sealed tent with white tables and a computer that analyzes data. Labs like this let scientists use the unique conditions of space to run experiments that prepare us for deep-space trips. What they learn also helps improve life on Earth.
+
+To open the lab you need two things: data to analyze and energy to run the equipment. The results get sent to Earth.
+
+<small>Source: Canadian Space Agency, "Why do we conduct science experiments in space?"</small>
+
+(if: $lab_done is true)[
+The data is already on its way to Earth.
+
+[[Back to map->Mars Map]]
+]
+(else-if: $data < 1)[
+The lab stays closed. There's no data to analyze.
+
+[[Back to map->Mars Map]]
+]
+(else-if: $energy < 1)[
+The lab stays closed. There's no energy to run the equipment.
+
+[[Back to map->Mars Map]]
+]
+(else:)[
+[[Look at the analyzer->Lab Mission]]
+
+[[Back to map->Mars Map]]
+]
+
+
+:: Lab Fast {"position":"2575,1450","size":"100,100"}
+(set: $energy to it - 1)
+(set: $roll to (random: 1, 100))
+
+(if: $roll <= 10)[
+(set: $data to 0)
+
+Halfway through, the analyzer crashes and wipes the files. All the data is gone, and there's no way to get it back.
+]
+(else:)[
+(set: $lab_done to true)
+(set: $data_sent to true)
+
+The quick analysis works. You send the results to Earth.
+]
+
+[[Back to map->Mars Map]]
+
+
+:: Lab Full {"position":"2700,1450","size":"100,100"}
+(set: $energy to it - 2)
+(set: $lab_done to true)
+(set: $data_sent to true)
+
+You run the full analysis. It takes a lot of energy, but every piece of data is checked and nothing is lost. You send the results to Earth.
+
+[[Back to map->Mars Map]]
+
+
+:: Lab Mission {"position":"2575,1325","size":"100,100"}
+You have $data of 5 pieces of data ready. They need to be analyzed and sent to Earth.
+
+Energy left: $energy
+
+[[Analyze it fast. It uses little energy, but there's a 10% chance something goes wrong and you lose all the data.->Lab Fast]]
+
+(if: $energy >= 2)[(link-goto: "Analyze it carefully. It uses a lot of energy, but you get all the data.", "Lab Full")]
+(else:)[Analyze it carefully. (Not enough energy for this option. You need at least 2.)]
+
+
+:: METERS [header] {"position":"1500,300","size":"100,100"}
+⚡ Energy: (max: 0, (min: 5, $energy))/5   🍎 Food: (max: 0, (min: 5, $food))/5   🛠️ Equipment: (max: 0, (min: 5, $equipment))/5   ❤️ Health: (max: 0, (min: 5, $health))/5   👥 Crew: (max: 0, (min: 5, $crew))/5   📊 Data: (max: 0, (min: 5, $data))/5
+----
+
+
+:: Mars Map {"position":"1875,475","size":"100,100"}
+<div class="mars-map">
+<span style="position:absolute; left:25%; top:18%; transform:translate(-50%,-50%); white-space:nowrap; font-size:1em;">[[🕳️ Expedition->Expedition]](if: $expedition_done is true)[ ✅]</span>
+<span style="position:absolute; left:75%; top:18%; transform:translate(-50%,-50%); white-space:nowrap; font-size:1em;">[[🌱 Greenhouse->Greenhouse]](if: $greenhouse_done is true)[ ✅]</span>
+<span style="position:absolute; left:25%; top:50%; transform:translate(-50%,-50%); white-space:nowrap; font-size:1em;">[[🏠 Habitat->Habitat]](if: $habitat_done is true)[ ✅]</span>
+<span style="position:absolute; left:75%; top:50%; transform:translate(-50%,-50%); white-space:nowrap; font-size:1em;">[[☀️ Solar Panels->Solar Panels]](if: $storm_done is true)[ ✅]</span>
+<span style="position:absolute; left:25%; top:82%; transform:translate(-50%,-50%); white-space:nowrap; font-size:1em;">[[🤖 Robot Garage->Rover Garage]](if: $garage_done is true)[ ✅]</span>
+<span style="position:absolute; left:75%; top:82%; transform:translate(-50%,-50%); white-space:nowrap; font-size:1em;">[[🚀 Spaceship->Spaceship]](if: $ship_done is true)[ ✅]</span>
+</div>
+
+Tap a place on the map to explore Mars!
+
+[[Sources and credits->Credits]]
+
+
+:: Rover Garage {"position":"2225,700","size":"100,100"}
+
+ROBOT GARAGE
+
+Two machines live here: a long robotic arm and a smaller robot with two hands for delicate jobs. On the space station, the real ones are called Canadarm2 and Dextre.
+
+A robot job isn't just pressing a button. The team has to line up the robot's work with the base's other systems, like communications, electricity, and computers. They plan where the cameras go and what path the arm will follow. They also check which software updates are needed and look for problems ahead of time. Engineers on the support team help at every step.
+
+<small>Source: Canadian Space Agency, "Robotics mission control centre".</small>
+
+[[Check tomorrow's robot job->Rover Garage Mission]]
+
+[[Back to map->Mars Map]]
+
+
+:: Rover Garage Mission {"position":"2225,900","size":"100,100"}
+(if: $garage_done is true)[
+The robots are ready for tomorrow.
+
+[[Back to map->Mars Map]]
+]
+(else:)[
+Tomorrow the arm has to move a heavy part to the solar panels. Three jobs need to be done first: coordinate with the base's other systems, plan the cameras and the arm's path, and update the software and look for problems.
+
+There's time and energy to do all three, but it will use a lot of energy.
+
+[[Do all three jobs. The robot is fully ready, but it uses a lot of energy.->Garage Full]]
+
+[[Coordinate the systems and plan the path, and skip the software update. It uses less energy, but there's a chance the robot's software freezes mid-job.->Garage Software]]
+
+[[Plan the path and update the software, and skip the coordination. It uses less energy, but there's a chance the arm's power use knocks out the radio or the lights for a while.->Garage Coordination]]
+]
+
+
+:: SETUP [startup] {"position":"1500,200","size":"100,100"}
+(set: $energy to 5)
+(set: $food to 5)
+(set: $equipment to 5)
+(set: $health to 5)
+(set: $crew to 5)
+(set: $data to 0)
+
+
+:: START {"position":"1875,350","size":"100,100"}
+🚀 JUNIOR ASTRONAUT MISSION: MARS
+
+Welcome, Astronaut!
+
+You are living at a base on Mars. Your job is to keep the crew, the food, the power, and the equipment safe.
+
+⭐ Remember: in space, every choice has a cost and you must own the consequences, 
+There is no perfect answer. You decide what to protect, and you live with what happens next.
+
+[[Start my mission->Mars Map]]
+
+[[Sources and credits->Credits]]
+
+
+:: Solar Panels {"position":"1525,600","size":"100,100"}
+SOLAR PANELS
+
+Rows of flat panels face the Sun. They turn sunlight into the power the whole base runs on.
+
+Mars is dusty, and the wind blows red dust onto the panels all the time.
+
+(if: $storm_done is true)[
+The panels are quiet now. The storm is over.
+
+[[Back to map->Mars Map]]
+]
+(else:)[
+An alarm goes off at the control box. A solar storm is heading for the base.
+
+[[Check the alert->Storm]]
+
+[[Back to map->Mars Map]]
+]
+
+
+:: Spaceship {"position":"3000,700","size":"100,100"}
+SPACESHIP
+
+The ship that brought the crew to Mars. It landed at the edge of the base and hasn't moved since.
+
+Inside there's a cockpit with screens and controls, a small cargo bay, and the seats the crew strapped into during the trip. Most of the equipment is turned off to save power.
+
+Someday it will carry the crew back to Earth.
+
+[[Check the ship's systems->Spaceship Mission]]
+
+[[Back to map->Mars Map]]
+
+
+:: Spaceship Mission {"position":"3000,825","size":"100,100"}
+(if: $ship_done is true)[
+The mission is complete.
+]
+(else-if: $data_sent is true)[
+(set: $ship_done to true)
+You connect the ship to the base. The results travel to Earth, and the engines wake up.
+
+(if: $data >= 5)[
+🏆 MISSION COMPLETE! You sent the full data set and the crew is ready to go home. Scientists on Earth will study every piece of it.
+]
+(else:)[
+⭐ MISSION COMPLETE! You sent part of the data. It is useful, but a full data set would have taught the scientists more.
+]
+
+(link: "Play again")[(reload:)]
+]
+(else-if: $expedition_done is true and $data < 1)[
+The ship's computer checks the files and finds nothing to send. The data from the expedition was lost or never collected.
+
+Mission incomplete. Astronauts learn from missions like this one: next time, protect the data.
+
+(link: "Try the mission again")[(reload:)]
+]
+(else:)[
+The ship is ready, but it has nothing to send yet. Collect data at the expedition, analyze it in the lab, and then come back.
+
+[[Back to map->Mars Map]]
+]
+
+
+:: Stay Connected {"position":"1525,1100","size":"100,100"}
+(set: $storm_done to true)
+
+(set: $roll to (random: 1, 100))
+
+(if: $roll <= 70)[
+(set: $equipment to it - 2)
+(set: $equipment_damaged to true)
+
+The storm hits hard. A power surge runs through the base, and some of the equipment burns out.
+
+[[Back to map->Mars Map]]
+]
+(else:)[
+The storm passes without hitting the base. Everything keeps working, and the equipment is fine.
+
+[[Back to map->Mars Map]]
+]
+
+
+:: Storm {"position":"1525,725","size":"100,100"}
+(set: $storm_done to true)
+
+STORM ALERT
+
+A solar storm is coming. It could last a few hours or the whole night. Strong bursts from the Sun can damage electronics.
+
+<small>Real science: in September 2017 a solar storm reached Mars. It lit up an aurora 25 times brighter than normal, and radiation on the ground doubled compared to any earlier measurement. Source: NASA / JPL-Caltech.</small>
+
+
+[[Disconnect everything. The equipment stays safe, but the base goes dark and cold and the food in the freezer may spoil.->Disconnect All]]
+
+[[Stay connected. Lights, heat, food and radio keep working, but the equipment could fail later.->Stay Connected]]
+
+[[Disconnect only the science equipment. Most things stay safe, but tonight's data is lost and some risk remains.->Disconnect Science]]
+
+
+:: StoryStylesheet [stylesheet]
+tw-story {
+  background: linear-gradient(#f7f0b8 0%, #f4cf8f 40%, #ea8f5f 100%);
+  font-family: "Trebuchet MS", "Segoe UI", Arial, sans-serif;
+  font-size: 1.25em;
+  color: #3a1a10;
+}
+
+.mars-map {
+  position: relative;
+  width: 100%;
+  height: 420px;
+  border-radius: 20px;
+  overflow: hidden;
+  background: url('https://i.pinimg.com/1200x/23/35/b5/2335b5bbd1faf3df2a8eda7902d08a03.jpg') center/cover, linear-gradient(#c1440e, #7a2a08);
+  box-shadow: inset 0 0 0 1000px rgba(0,0,0,0.15);
+}
+
+/* contenedor general de cada zona */
+.scene {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* bloque 1: imagen */
+.scene-image {
+  width: 100%;
+  height: 260px;
+  border-radius: 16px;
+  background-color: #7a2a08; /*Cambiar a background-image: url*/
+  background-size: cover;
+  background-position: center;
+}
+
+/* la imagen de cada zona va en su propia clase */
+.scene-image-crater {
+  /* TODO: replace with a local image, e.g. url('assets/crater.jpg') */
+  background-image: linear-gradient(#a8321c, #5a1a08);
+}
+
+/* bloque 2: texto */
+.scene-text {
+  line-height: 1.5;
+}
+
+/* bloque 3: botones */
+.scene-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+/* montañas verdes de fondo */
+tw-story::before {
+  content: "";
+  position: fixed;
+  left: 0; right: 0; bottom: 0;
+  height: 50vh;
+  background: #84b8a3;
+  clip-path: polygon(0 55%, 10% 35%, 22% 50%, 38% 18%, 52% 42%, 68% 22%, 82% 48%, 100% 30%, 100% 100%, 0 100%);
+  pointer-events: none;
+}
+
+/* montañas rojas al frente */
+tw-story::after {
+  content: "";
+  position: fixed;
+  left: 0; right: 0; bottom: 0;
+  height: 30vh;
+  background: #a8321c;
+  clip-path: polygon(0 50%, 15% 20%, 30% 45%, 48% 10%, 62% 40%, 80% 15%, 100% 45%, 100% 100%, 0 100%);
+  pointer-events: none;
+}
+
+/* tarjeta de texto, para que se lea bien sobre el paisaje */
+tw-passage {
+  position: relative;
+  z-index: 1;
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 24px;
+  background: rgba(255, 245, 228, 0.9);
+  border-radius: 20px;
+}
+
+/* barra de medidores (passage con tag header) */
+tw-include[type="header"] {
+  position: relative;
+  z-index: 1;
+  display: block;
+  max-width: 800px;
+  margin: 12px auto 0;
+  padding: 10px 24px;
+  background: rgba(255, 245, 228, 0.9);
+  border-radius: 20px;
+  font-weight: bold;
+}
+
+/* enlaces como botones planos */
+tw-link, .enchantment-link {
+  display: inline-block;
+  background: #e4572e;
+  color: #ffffff;
+  padding: 8px 16px;
+  margin: 6px 0;
+  border-radius: 14px;
+  box-shadow: 0 4px 0 #9c2f12;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+tw-link:hover, .enchantment-link:hover {
+  background: #ff7a4d;
+}
+
+/* ocultar flechas de retroceso */
+tw-sidebar {
+  display: none;
+}
