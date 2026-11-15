@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Own it: Mars</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="src/ui/style.css">
+</head>
+<body>
+  <div class="shell">
+    <div class="topbar">
+      <span class="brand">🚀 Own it: Mars</span>
+      <button class="icon-btn" data-action="sources" aria-label="Science sources" title="Science sources">📚</button>
+      <button class="icon-btn" id="mute" aria-label="Mute" title="Sound on / off">🔊</button>
+    </div>
+    <div id="hud" hidden><div id="meters" aria-label="Base meters"></div></div>
+    <main id="screen"></main>
+  </div>
+  <div id="window" class="overlay" hidden></div>
+  <script type="module">
+    import { init } from './src/ui/ui.js';
+    init();
+  </script>
+</body>
+</html>
