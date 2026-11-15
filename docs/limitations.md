@@ -1,8 +1,15 @@
 # Limitations
 
 - This is an educational game, not a scientific simulator.
-- Probabilities, costs and timers are design values. They are not NASA measurements.
-- All science content is curated text from official sources. No live data is used.
-- Part of the content (maintenance, greenhouse, robotics, lab science) comes from the Canadian Space Agency and describes the International Space Station, not a Martian outpost. The game uses it to explain principles that also apply to future missions.
+- Chances, costs, timers and meter values are design values. They are not NASA measurements.
+- All science content is curated text from official sources. No live data is used, and the game never presents it as live.
+- Part of the content (maintenance, greenhouse, robotics, lab science) comes from the Canadian Space Agency and describes the International Space Station. The game uses it to explain principles that also apply to future missions.
+- The whole game is a single day: there are no daily cycles, hunger or thirst. Food is a requirement for the Expedition instead.
+- The numbers have not been playtested with players yet.
 - The game has not been tested with children yet. [Update if this changes]
+- There are no mini-games in this version: each station is a choice pop-up.
+- The font (Baloo 2) loads from Google Fonts when the player is online; offline, a system font is used.
 - The game does not teach real engineering calculations.
+
+## Privacy
+The game has no accounts, makes no network calls and collects no data. It stores only whether sound is muted, in the player's browser.
