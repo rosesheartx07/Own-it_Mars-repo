@@ -7,7 +7,7 @@ An educational top-down game for kids aged 7–12. The player runs a Martian out
 Built for the Space Apps PV Virtual challenge: *let kids experience the real trade-offs of running a lunar or Martian outpost.*
 
 ## Play
-- **Online:**  [https://rosesheartx07.github.io/mars-outpost-game/](https://rosesheartx07.github.io/mars-outpost-game/)
+- **Online:**  [https://rosesheartx07.github.io/Own-it_Mars-repo/](https://rosesheartx07.github.io/Own-it_Mars-repo/)
 - **On your computer:** open `game/dist/mars-outpost.html` in a browser (double-click; no server, account or install needed).
 - **Demo video:** [Watch the demo](https://rosesheartx07.github.io/mars-outpost-game/demo.mp4)
 
