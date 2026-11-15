@@ -1,6 +1,6 @@
 # Documentation
 
-[GAME NAME] is an educational top-down game about running a Martian outpost, for kids aged 7–12.
+Own It: Mars is an educational top-down game about running a Martian outpost, for kids aged 7–12.
 
 ## Recommended reading order
 1. [Project overview](project-overview.md)
