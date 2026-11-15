@@ -16,6 +16,3 @@ This version of the game uses only the sources below. They come from NASA / JPL 
 - All content above is **curated and archived text**. None of it is live data, and the game never presents it as live.
 - The sources are credited inside the game, naming the publisher (NASA / JPL-Caltech or Canadian Space Agency).
 - Probabilities, costs and timers are game design values.
-
-## Not used in this version
-The challenge also offers live and archived data services (for example DONKI, OSDR, RadLab and Mars Trek). They are not part of this version. See [roadmap.md](roadmap.md).
