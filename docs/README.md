@@ -21,7 +21,7 @@ Own It: Mars is an educational top-down game about running a Martian outpost, fo
 - **Prepare the presentation:** Demo script.
 
 ## Core principles
-- Every decision has a consequence, good or bad. There is no perfect answer.
+- Every decision has a consequence. There is no perfect answer.
 - Science content comes only from official sources and is credited inside the game.
 - Game values (probabilities, costs, timers) are design values, not NASA data.
 - Curated content is never presented as live data.
