@@ -241,7 +241,7 @@ function showSources() {
       <p>All the science in this game comes from official sources: NASA / JPL-Caltech and the Canadian Space Agency (CSA). It is curated text, not live data.</p>
       <ul class="sources">${list}</ul>
       <p class="small">The chances and costs in the game (like “50%” or “Energy −2”) are game design values, not NASA data. Content from CSA is credited to the Canadian Space Agency. NASA does not endorse any non-U.S. Government entity and is not responsible for information contained on non-U.S. Government websites.</p>
-      <p class="small">🎵 Music: “Alone in Space with Only Your Descriptions”, an original song by our team.</p>
+      <p class="small">🎵 Music: “Alone in Space with Only Your Decisions”, an original song by our team.</p>
       <p class="small">Part of the content (maintenance, greenhouse, robotics, lab science) describes the International Space Station. The game uses it to explain ideas that also apply to future missions to Mars.</p>
     </div><div class="w-actions">${btn('Close', 'close', 'big')}</div>`);
 }
