@@ -16,17 +16,16 @@ The JavaScript game uses the same map as the Twine prototype: a tap map with six
 
 The laboratory is not on the map: it is opened from the Expedition, and only after an expedition. Exact positions are in `game/data/stations.json` (`mapPosition`).
 
-## Daily cycle (sol)
-1. Morning: the game rolls for a random event. An event may or may not happen on a given day.
-2. Day: the player taps places on the map and has a limited number of actions.
-3. When an event triggers, a window opens over the map with a timer. The player chooses an option.
+## One day
+There are no daily cycles. The whole game happens in **a single day**. The player taps places on the map in any order, and each place can be used once. The game ends when the final mission is completed or when the player gets a Game Over.
 
 ## Random events
-Important events (solar storm, dust storm) are **not planned**: they can show up on any day, with the chance of each set in `events.json` (`eventProbability`, design values). The player does not know when one will arrive, so they must keep the base ready. The Twine prototype only has a fixed solar storm alert in Solar panels, because it has no days; the random version is for JavaScript.
+Important events (solar storm, dust storm) are **not planned**: they can show up at a random moment during the day, and the player does not know when, so they must keep the base ready. An event can be the very first thing that happens when the player enters the game, or it can arrive after the player finishes a task (a visit to a place). When one arrives, a window opens over the map with a timer and the player chooses an option. The chance of each event is in `events.json` (`eventProbability`, design values). The Twine prototype only has a fixed solar storm alert in Solar panels; the random version is for JavaScript.
 
 To decide:
-- Maximum one event per sol, or more.
-- Whether an event can repeat.
+- Exactly when the game rolls for an event: once when the game starts and again after each task is done (proposal), and the chance of each roll.
+- Maximum number of events in the game, and whether an event can repeat.
+- How long the dust storm lasts, now that there are no days.
 - Whether the Twine prototype's solar storm options or the ones in `events.json` are kept (see [prototype.md](prototype.md)).
 
 ## Music and sound
@@ -79,8 +78,7 @@ The player does not get hungry or thirsty. Instead, **food is a requirement**: t
 
 - Minimum food to open the Expedition: [X]% (to be decided in playtests; design value, not NASA data).
 - If the player does not have enough food, the Expedition stays closed and the game says why and points to the Greenhouse.
-- Food can still go down because of events and failures (for example, spoiled food or lost crops).
+- Food is not lost by skipping meals. It can still go down because of events and failures (for example, spoiled food or lost crops).
 
 ## To be decided
-- Number of sols per game.
 - Final values for probabilities and costs.
