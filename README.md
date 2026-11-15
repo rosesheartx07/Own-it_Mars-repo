@@ -26,6 +26,14 @@ Every choice has consecuences. Protecting the solar panels can cost health, coll
 ## Science sources
 All science content comes from official sources: NASA / JPL pages and resources of the Canadian Space Agency (CSA) provided by the challenge. Nothing is invented as science. See [docs/nasa-data-sources.md](docs/nasa-data-sources.md) and [CREDITS.md](CREDITS.md).
 
+## Team
+| Name | Rol |
+|---|---|
+| Nahomi Tlapanco Vélez | Business Model and Pitch |
+| Natalia Urban Castillo | Prototype development |
+| Valeria de la Rosa Alejandro | Data and source verification; Video game development in JavaScript |
+| Maria Fernanda Herrera Ramírez | Video game development in JavaScript |
+
 ## Repository layout
 ```
 docs/   Design, events, data sources, limitations, roadmap
@@ -33,6 +41,4 @@ game/   All game code, data and assets
 ```
 
 
-## Team
-[NAMES AND ROLES]
 
