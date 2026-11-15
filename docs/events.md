@@ -1,8 +1,8 @@
 # Events catalog
 
-Events are **random**: each one has a probability of happening on a given sol (day), so the player never knows when one will arrive. In the Twine prototype only the solar storm exists, as a fixed alert; the random version will be built in JavaScript.
+Events are **random**: each one has a chance of happening at a random moment of the game, so the player never knows when one will arrive: it can happen as soon as the player enters the game, or after finishing a task. The whole game is a single day. In the Twine prototype only the solar storm exists, as a fixed alert; the random version will be built in JavaScript.
 
-Each event has a probability of happening on a given day, a decision timer, options with probabilistic consequences, an explanation and an official source. Machine-readable versions live in [`game/data/events.json`](../game/data/events.json).
+Each event has a probability of happening, a decision timer, options with probabilistic consequences, an explanation and an official source. Machine-readable versions live in [`game/data/events.json`](../game/data/events.json).
 
 Probabilities and timers are design values.
 
@@ -19,6 +19,4 @@ Dust also settles on solar panels and reduces the sunlight they receive. Sometim
 **Sources:**
 - https://science.nasa.gov/solar-system/planets/mars/10-things-massive-dust-storm-on-mars/
 - https://science.nasa.gov/photojournal/solar-panel-dust-accumulation-and-cleanings/
-
-
 
