@@ -16,9 +16,6 @@ Kids aged 7–12. It can also be used in a classroom or with family.
 - Communication with Earth matters for a mission to succeed.
 - A good decision does not always give a good result; that is how engineers and mission planners work.
 
-## Inspiration
-Stardew Valley (top-down routine), Papers Please (decisions with rules), 60 Seconds! (timed choices and random events) and The Martian (survival through science).
-
 ## Repository components
 - `docs/`: design and documentation.
 - `game/`: all game code, data and assets.
