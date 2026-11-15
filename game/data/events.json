@@ -1,0 +1,219 @@
+{
+  "_note": "Generated from src/game/content.js by tools/export-data.mjs. Do not edit by hand. Probabilities (p, eventProbability), costs (effects) and timers (decisionSeconds) are game design values, not NASA data.",
+  "events": [
+    {
+      "id": "solar_storm",
+      "name": "Solar storm",
+      "icon": "☀️",
+      "art": "solar",
+      "eventProbability": 0.3,
+      "decisionSeconds": 30,
+      "skipIf": "storm_done",
+      "doneFlag": "storm_done",
+      "alert": "Fast particles from the Sun are heading for the base right now! Strong bursts from the Sun can damage electronics. Choose fast!",
+      "options": [
+        {
+          "id": "disconnect_all",
+          "label": "Disconnect everything.",
+          "base": {
+            "effects": {
+              "food": -2,
+              "energy": 2
+            },
+            "flags": [
+              "food_lost"
+            ],
+            "text": "You turned everything off. The base stayed dark and cold all night, and the food in the freezer spoiled."
+          },
+          "branches": [
+            {
+              "p": 30,
+              "effects": {
+                "equipment": -1
+              },
+              "flags": [
+                "equipment_damaged"
+              ],
+              "text": "A small surge still reached the base, and one machine stopped working."
+            }
+          ],
+          "otherwise": {
+            "text": "The equipment came through the storm fine."
+          }
+        },
+        {
+          "id": "stay_connected",
+          "label": "Stay connected.",
+          "branches": [
+            {
+              "p": 70,
+              "effects": {
+                "equipment": -2,
+                "energy": -2
+              },
+              "flags": [
+                "equipment_damaged"
+              ],
+              "text": "The storm hits hard. A power surge runs through the base, and some of the equipment burns out."
+            }
+          ],
+          "otherwise": {
+            "text": "The storm passes without hitting the base. Everything keeps working, and the equipment is fine."
+          }
+        },
+        {
+          "id": "disconnect_science",
+          "label": "Disconnect only the science equipment.",
+          "base": {
+            "effects": {
+              "energy": -1
+            },
+            "flags": [
+              "data_lost"
+            ],
+            "text": "You shut down the science instruments and kept the essentials on. Tonight's data is lost."
+          },
+          "branches": [
+            {
+              "p": 30,
+              "effects": {
+                "equipment": -1
+              },
+              "flags": [
+                "equipment_damaged"
+              ],
+              "text": "A small surge still got through, and one machine stopped working."
+            }
+          ],
+          "otherwise": {
+            "text": "Nothing else was damaged."
+          }
+        }
+      ],
+      "timeoutOption": "stay_connected",
+      "timeoutText": "Time ran out! Nobody switched anything off, so the base stayed connected.",
+      "science": {
+        "text": "Sometimes the Sun unleashes a massive explosion that sends very fast-moving particles toward Mars. We call this a solar storm. In September 2017 one reached Mars and lit up an aurora 25 times brighter than normal. Radiation on the ground was twice as high as any earlier measurement.",
+        "source": {
+          "publisher": "NASA / JPL-Caltech",
+          "title": "Large Solar Storm Sparks Global Aurora and Doubles Radiation Levels on the Martian Surface",
+          "url": "https://www.jpl.nasa.gov/news/large-solar-storm-sparks-global-aurora-and-doubles-radiation-levels-on-the-martian-surface/"
+        }
+      }
+    },
+    {
+      "id": "dust_storm",
+      "name": "Dust storm",
+      "icon": "🌪️",
+      "art": "dust",
+      "eventProbability": 0.3,
+      "decisionSeconds": 15,
+      "doneFlag": "dust_done",
+      "alert": "A huge cloud of red dust is blowing over the base. It blocks the sunlight the solar panels need. What do you do?",
+      "options": [
+        {
+          "id": "power_saving",
+          "label": "Power-saving mode",
+          "mode": "independent",
+          "base": {
+            "effects": {
+              "time": -1
+            },
+            "text": "You pause the science work and save power until the dust settles, like NASA did with Opportunity."
+          },
+          "branches": [
+            {
+              "p": 25,
+              "effects": {
+                "energy": -2
+              },
+              "flags": [
+                "dust_on_panels"
+              ],
+              "text": "Dust stayed on the panels. You need to clean them."
+            }
+          ],
+          "otherwise": {
+            "text": "The wind blew most of the dust off the panels. Lucky!"
+          }
+        },
+        {
+          "id": "keep_working",
+          "label": "Keep working as usual",
+          "mode": "independent",
+          "base": {
+            "text": "You keep every system running while the dust blocks the Sun."
+          },
+          "branches": [
+            {
+              "p": 55,
+              "effects": {
+                "energy": -2,
+                "food": -1,
+                "health": -1
+              },
+              "flags": [
+                "battery_drained"
+              ],
+              "text": "The battery ran out. Heating failed: some crops were lost and you got very cold."
+            }
+          ],
+          "otherwise": {
+            "text": "The battery held on until the dust cleared. That was close."
+          }
+        },
+        {
+          "id": "cut_to_essentials",
+          "label": "Cut to essentials and choose one thing to protect",
+          "mode": "independent",
+          "base": {
+            "effects": {
+              "energy": -1
+            },
+            "text": "You turn off everything except heat, air and the radio."
+          },
+          "branches": [
+            {
+              "p": 35,
+              "effects": {
+                "data": -1
+              },
+              "flags": [
+                "results_lost"
+              ],
+              "text": "The results of what you turned off were lost."
+            },
+            {
+              "p": 25,
+              "effects": {
+                "energy": -1
+              },
+              "flags": [
+                "dust_on_panels"
+              ],
+              "text": "Dust stayed on the panels. You need to clean them."
+            }
+          ],
+          "otherwise": {
+            "text": "The essentials kept running, and nothing was lost."
+          }
+        }
+      ],
+      "timeoutOption": "keep_working",
+      "timeoutText": "Time ran out! Nobody changed anything, so the base kept working as usual.",
+      "science": {
+        "text": "A storm of tiny dust particles covered much of Mars and made NASA's Opportunity rover suspend its science work. Opportunity runs on sunlight, and the dust blocks it. NASA's Curiosity rover has a nuclear-powered battery that works day and night, so it was mostly unaffected. Dust also settles on solar panels and reduces the sunlight they receive. Sometimes wind clears it away, but that is luck, not a plan.",
+        "source": {
+          "publisher": "NASA",
+          "title": "10 Things: Massive Dust Storm on Mars",
+          "url": "https://science.nasa.gov/solar-system/planets/mars/10-things-massive-dust-storm-on-mars/"
+        },
+        "extraSource": {
+          "publisher": "NASA",
+          "title": "Solar-Panel Dust Accumulation and Cleanings",
+          "url": "https://science.nasa.gov/photojournal/solar-panel-dust-accumulation-and-cleanings/"
+        }
+      }
+    }
+  ]
+}
