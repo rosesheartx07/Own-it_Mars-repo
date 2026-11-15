@@ -20,4 +20,9 @@ Content from CSA is credited to the Canadian Space Agency. NASA does not endorse
 - Why we conduct science experiments in space: https://www.asc-csa.gc.ca/eng/iss/science/why-do-we-conduct-science-experiments-in-space.asp
 
 ## Images, sprites and sounds
-[List every asset with author, link and license]
+Every music track and sound effect must be listed here with title, author, link and license (see docs/audio.md).
+- Music: "Alone in Space with Only Your Thoughts" — original song by the Own it: Mars team. File: `game/assets/audio/music.mp3` (starts at second 17 of the original, end silence removed, re-encoded to 128 kbps for the web). All rights reserved by the team.
+- JavaScript game: all drawings (SVG) and sound effects (Web Audio) were made by the team in code. Font: Baloo 2 (Google Fonts, SIL Open Font License).
+- Prototype only (`game/prototype/`, not part of the playable JavaScript game): map background hotlinked in the Twine stylesheet: https://i.pinimg.com/1200x/23/35/b5/2335b5bbd1faf3df2a8eda7902d08a03.jpg 
+- Tools: Twine 2 and the Harlowe story format (prototype); Node.js (tests and build).
+
