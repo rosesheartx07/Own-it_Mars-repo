@@ -9,6 +9,18 @@ Built for the Space Apps PV Virtual challenge: *let kids experience the real tra
 ## Current status
 Design and documentation phase. The game design, event content and data sources are defined; the game code is under development and will be added in `game/`.
 
+
+## Recommended reading order
+1. [Project overview](project-overview.md)
+2. [Game design](game-design.md)
+3. [Events catalog](events.md)
+4. [Science and data sources](nasa-data-sources.md)
+5. [Limitations](limitations.md)
+6. [Demo script](demo-script.md)
+7. [Status and roadmap](roadmap.md)
+8. [Prototype notes](prototype.md) (Twine version used to test the rules)
+9. [Music and sound](audio.md)
+    
 ## The idea in one minute
 Every choice has consecuences. Protecting the solar panels can cost health, collecting more data on an expedition can cost radiation exposure, and a fast analysis in the lab can lose the data. The player learns that astronauts and mission planners decide under risk every day.
 
@@ -22,6 +34,12 @@ Every choice has consecuences. Protecting the solar panels can cost health, coll
 | Expedition | Collect data, with a radiation risk |
 | Laboratory | Analyze data and send it to Earth (opens only after an expedition) |
 | Spaceship | Final mission: get all the data and send it to Earth |
+
+## Core principles
+- Every decision has a consequence: every option protects something and risks something else.
+- Science content comes only from official sources and is credited inside the game.
+- Game values (probabilities, costs, timers) are design values, not NASA data.
+- Curated content is never presented as live data.
 
 ## Science sources
 All science content comes from official sources: NASA / JPL pages and resources of the Canadian Space Agency (CSA) provided by the challenge. Nothing is invented as science. See [docs/nasa-data-sources.md](docs/nasa-data-sources.md) and [CREDITS.md](CREDITS.md).
