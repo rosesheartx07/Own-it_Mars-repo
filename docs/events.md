@@ -20,9 +20,5 @@ Dust also settles on solar panels and reduces the sunlight they receive. Sometim
 - https://science.nasa.gov/solar-system/planets/mars/10-things-massive-dust-storm-on-mars/
 - https://science.nasa.gov/photojournal/solar-panel-dust-accumulation-and-cleanings/
 
-## Adding a new event
-1. Write the text in simple language; explain any science word in one short sentence.
-2. Give at least two options, and make sure none is free.
-3. Add an official source from the list in `CREDITS.md`.
-4. Add the event to `game/data/events.json`.
+
 
