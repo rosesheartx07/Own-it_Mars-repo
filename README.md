@@ -32,8 +32,6 @@ docs/   Design, events, data sources, limitations, roadmap
 game/   All game code, data and assets
 ```
 
-## Documentation
-Start with [docs/README.md](docs/README.md).
 
 ## Team
 [NAMES AND ROLES]
