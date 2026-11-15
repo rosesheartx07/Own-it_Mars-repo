@@ -1,5 +1,7 @@
 # Events catalog
 
+Events are **random**: each one has a probability of happening on a given sol (day), so the player never knows when one will arrive. In the Twine prototype only the solar storm exists, as a fixed alert; the random version will be built in JavaScript.
+
 Each event has a probability of happening on a given day, a decision timer, options with probabilistic consequences, an explanation and an official source. Machine-readable versions live in [`game/data/events.json`](../game/data/events.json).
 
 Probabilities and timers are design values.
@@ -23,3 +25,4 @@ Dust also settles on solar panels and reduces the sunlight they receive. Sometim
 2. Give at least two options, and make sure none is free.
 3. Add an official source from the list in `CREDITS.md`.
 4. Add the event to `game/data/events.json`.
+
