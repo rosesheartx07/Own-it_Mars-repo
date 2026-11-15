@@ -1,4 +1,4 @@
-# Own it: Mars
+# Own It: Mars
 
 > **Survive Mars with real science.**
 
