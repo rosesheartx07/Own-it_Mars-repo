@@ -10,7 +10,7 @@ Built for the Space Apps PV Virtual challenge: *let kids experience the real tra
 Design and documentation phase. The game design, event content and data sources are defined; the game code is under development and will be added in `game/`.
 
 ## The idea in one minute
-No choice is free. Protecting the solar panels can cost health, collecting more data on an expedition can cost radiation exposure, and a fast analysis in the lab can lose the data. The player learns that astronauts and mission planners decide under risk every day.
+Every choice has consecuences. Protecting the solar panels can cost health, collecting more data on an expedition can cost radiation exposure, and a fast analysis in the lab can lose the data. The player learns that astronauts and mission planners decide under risk every day.
 
 ## Stations
 | Station | What the player does |
@@ -36,5 +36,3 @@ game/   All game code, data and assets
 ## Team
 [NAMES AND ROLES]
 
-## License
-[MIT or other — see LICENSE]
