@@ -12,6 +12,9 @@ This version of the game uses only the sources below. They come from NASA / JPL 
 | CSA: Robotics mission control centre | How a robotics operation works | Robot garage | Curated text |
 | CSA: Science experiments in space | Risks of long missions; purpose of lab science | Expedition, laboratory | Curated text |
 
+## Where the player sees the sources
+Every station and event has an "Is this real? The science behind it" panel with the text and its source, and the 📚 button in the top bar lists all the sources.
+
 ## Important
 - All content above is **curated and archived text**. None of it is live data, and the game never presents it as live.
 - The sources are credited inside the game, naming the publisher (NASA / JPL-Caltech or Canadian Space Agency).
