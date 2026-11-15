@@ -4,35 +4,36 @@
 - [x] Concept, stations and resources
 - [x] Expedition, laboratory and final mission rules
 - [x] Solar storm and dust storm events
-- [ ] More events (new events need an official source from `CREDITS.md`)
-- [ ] Final numbers for probabilities and costs
-
-## Documentation
-- [ ] Audio plan and music list with licenses ([audio.md](audio.md))
-- [x] README, credits, design docs
-- [ ] Mockups (screens and pop-up windows)
-- [ ] Demo video
+- [x] Minimum food to open the Expedition (3 out of 5)
+- [x] Final numbers for chances, costs and timers (after playtesting)
+- [ ] More events (new events need an official source listed in `CREDITS.md`)
 
 ## Prototype
 - [x] Playable Twine prototype in `game/prototype/` (see [prototype.md](prototype.md))
-- [ ] Playtest it and decide the final numbers
+- [x] Rules ported to the JavaScript game
 
 ## Game code (`game/`)
-- [ ] Engine: bars, days, random events, probabilities
-- [ ] Tap map as in the prototype, and stations
-- [ ] Pop-up windows and mini-games
-- [ ] Random event pop-up over the map (solar storm, dust storm)
-- [ ] Music and sounds (see [audio.md](audio.md))
-- [ ] "Is this real?" source panel inside the game
+- [x] Engine: meters, rules, random events, probabilities (single day, no sols)
+- [x] Tap map and stations, as in the prototype
+- [x] Pop-up windows
+- [x] Random event pop-ups over the map with a decision timer (solar storm, dust storm)
+- [x] Food requirement for the Expedition
+- [x] Dead-end detection (the lab wipes the data) with a restart offer
+- [x] "Is this real?" science panel and a sources button
+- [x] Launch Day mission log (*What you protected* / *What it cost*)
+- [x] Music and sounds (see [audio.md](audio.md))
+- [x] Automated checks (`npm test`) and single-file build (`npm run build`)
 
-## Pitch checklist (from the Space Apps survival guide)
-- [x] Core message in 5 words: "Survive Mars with real science."
-- [ ] Explain how it works in under 1 minute
-- [ ] Recorded demo, not live code
-- [ ] Business model: viability, stability, profitability
-- [ ] Competition and how easy it is to enter the market
-- [ ] Data and sources (NASA official sources)
-- [ ] Q&A: the specialist answers; after 5 seconds anyone helps; if nobody knows, say "We don't know"
+## Documentation
+- [x] README, credits, design docs, audio plan and music credit
+- [ ] Demo video
+
+## Before submitting
+- [ ] Fill in the placeholders: team and roles and license in `README.md`, year and team name in `LICENSE`
+- [ ] Publish on GitHub Pages and put the link in the README
+- [ ] Decide the license of our song ([audio.md](audio.md))
+- [ ] Confirm or remove the Pinterest image URL that the Twine prototype still uses (`CREDITS.md`)
+- [ ] Playtest on a phone and on a laptop; note the results in `docs/limitations.md`
 
 ## Future ideas (not part of this version)
 - Connect to live challenge data services such as DONKI, with a clear "live" label
