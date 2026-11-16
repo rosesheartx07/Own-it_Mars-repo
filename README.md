@@ -70,7 +70,7 @@ Details in [game/README.md](game/README.md).
 ## Publish on GitHub Pages
 1. In the repository go to **Settings → Pages**.
 2. Under *Build and deployment*, choose **Deploy from a branch**, branch `main`, folder `/ (root)`. (The repository must be **public**: GitHub Pages is free for public repositories.)
-3. After a minute the game opens at `[https://<user>.github.io/<repository>/](https://rosesheartx07.github.io/Own-it_Mars-repo/)` (the root `index.html` redirects to the game). Put that link in the **Play** section above.
+3. After a minute the game opens at `https://rosesheartx07.github.io/Own-it_Mars-repo/` (the root `index.html` redirects to the game). Put that link in the **Play** section above.
 
 ## Documentation
 Start with [docs/README.md](docs/README.md). Prototype rules: [docs/prototype.md](docs/prototype.md).
