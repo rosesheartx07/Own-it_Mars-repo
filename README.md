@@ -81,7 +81,6 @@ Start with [docs/README.md](docs/README.md). Prototype rules: [docs/prototype.md
 | Nahomi Tlapanco Vélez | Business Model and Pitch |
 | Natalia Urban Castillo | Prototype development |
 | Valeria de la Rosa Alejandro | Data and source verification; Video game development in JavaScript |
-| Maria Fernanda Herrera Ramírez | Video game development in JavaScript |
 
 ## License
 - Music (`game/assets/audio/music.mp3`): original song by the team. 
