@@ -10,11 +10,12 @@ Own it: Mars is an educational top-down game about running a Martian outpost, fo
 5. [Science and data sources](nasa-data-sources.md)
 6. [Limitations](limitations.md)
 7. [Demo](demo.pdf)
-8. [Status and roadmap](roadmap.md)
-9. [Prototype notes](prototype.md) (Twine version used to test the rules)
-10. [Music and sound](audio.md)
-11. [Hosting and scalability](scalability.md)
-12. [Business Model](docs/business-model.pdf)
+8. [Demo Script](docs/demo-script.pdf)
+9. [Status and roadmap](roadmap.md)
+10. [Prototype notes](prototype.md) (Twine version used to test the rules)
+11. [Music and sound](audio.md)
+12. [Hosting and scalability](scalability.md)
+13. [Business Model](docs/business-model.pdf)
 
 ## Quick paths
 - **Understand the idea:** Project overview.
