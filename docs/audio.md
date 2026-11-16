@@ -6,5 +6,10 @@
 - **Controls:** an always-visible mute button and a low default volume, because the audience is kids aged 7–12, sometimes in a classroom. The mute choice is remembered in the browser (`localStorage`).
 - Browsers block audio until the player taps something, so the music starts after the first tap ("Start my mission").
 
+## How the song was made
+The song was produced by the team in FL Studio. Screenshot of the arrangement:
+
+![FL Studio arrangement of the song](images/music-fl-studio.jpeg)
+
 ## Change the song
 Replace `game/assets/audio/music.mp3` with a file of the same name and run `npm run build` inside `game/`. Keep the file small (the current one is 128 kbps) so the game loads fast.
