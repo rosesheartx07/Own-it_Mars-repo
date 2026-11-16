@@ -79,7 +79,7 @@ Start with [docs/README.md](docs/README.md). Prototype rules: [docs/prototype.md
 | Name | Rol |
 |---|---|
 | Nahomi Tlapanco Vélez | Business Model and Pitch |
-| Natalia Urban Castillo | Prototype development |
+| Natalia Urban Castillo | Prototype development and Pitch |
 | Valeria de la Rosa Alejandro | Data and source verification; Video game development in JavaScript |
 
 ## License
