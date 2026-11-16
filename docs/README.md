@@ -14,6 +14,7 @@ Own it: Mars is an educational top-down game about running a Martian outpost, fo
 9. [Prototype notes](prototype.md) (Twine version used to test the rules)
 10. [Music and sound](audio.md)
 11. [Hosting and scalability](scalability.md)
+12. [Business Model](scalability.md)
 
 ## Quick paths
 - **Understand the idea:** Project overview.
