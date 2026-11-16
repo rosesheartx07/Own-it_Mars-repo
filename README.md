@@ -9,7 +9,7 @@ Built for the Space Apps PV Virtual challenge: *let kids experience the real tra
 ## Play
 - **Online:**  [https://rosesheartx07.github.io/Own-it_Mars-repo/](https://rosesheartx07.github.io/Own-it_Mars-repo/)
 - **On your computer:** open `game/dist/mars-outpost.html` in a browser (double-click; no server, account or install needed).
-- **Demo:** [Watch the demo]()
+- **Demo:** [Watch the demo](demo.pdf)
 
 ## How to run it (for judges and players)
 **Option 1 — Online (recommended, nothing to install).** Open the link in the *Play* section above. It works on a phone, a tablet or a computer with a modern browser (Chrome, Edge, Firefox or Safari). No account, no download, no sign-up.
