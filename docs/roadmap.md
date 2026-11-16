@@ -26,14 +26,12 @@
 
 ## Documentation
 - [x] README, credits, design docs, audio plan and music credit
-- [ ] Demo video
+- [x] Demo video
 
 ## Before submitting
-- [ ] Fill in the placeholders: team and roles and license in `README.md`, year and team name in `LICENSE`
-- [ ] Publish on GitHub Pages and put the link in the README
-- [ ] Decide the license of our song ([audio.md](audio.md))
-- [ ] Confirm or remove the Pinterest image URL that the Twine prototype still uses (`CREDITS.md`)
-- [ ] Playtest on a phone and on a laptop; note the results in `docs/limitations.md`
+- [x] Fill in the placeholders: team and roles and license in `README.md`, year and team name in `LICENSE`
+- [x] Publish on GitHub Pages and put the link in the README
+
 
 ## Future ideas (not part of this version)
 - Connect to live challenge data services such as DONKI, with a clear "live" label
