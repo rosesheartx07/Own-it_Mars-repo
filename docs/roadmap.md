@@ -5,7 +5,9 @@
 - [x] Expedition, laboratory and final mission rules
 - [x] Solar storm and dust storm events
 - [x] Minimum food to open the Expedition (3 out of 5)
-- [x] Final numbers for chances, costs and timers (after playtesting)
+- [x] Final numbers for chances, costs and timers
+- [x] Playtest with about 10 people aged 15–40 (no changes were needed)
+- [ ] Playtest with children aged 7–15
 - [ ] More events (new events need an official source listed in `CREDITS.md`)
 
 ## Prototype
@@ -26,10 +28,10 @@
 
 ## Documentation
 - [x] README, credits, design docs, audio plan and music credit
-- [x] Demo video
+- [x] Demo slides and 30-second demo video
 
 ## Before submitting
-- [x] Fill in the placeholders: team and roles and license in `README.md`, year and team name in `LICENSE`
+- [x] Fill in the team and roles in `README.md`
 - [x] Publish on GitHub Pages and put the link in the README
 
 
