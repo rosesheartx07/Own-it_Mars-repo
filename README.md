@@ -9,7 +9,7 @@ Built for the Space Apps Challenge 2026: *let kids experience the real trade-off
 ## Play
 - **Online:**  [https://rosesheartx07.github.io/Own-it_Mars-repo/](https://rosesheartx07.github.io/Own-it_Mars-repo/)
 - **On your computer:** open `game/dist/mars-outpost.html` in a browser (double-click; no server, account or install needed).
-- **Demo:** [Watch the demo](demo.pdf)
+- **Demo:** [Read and watch the demo](demo.pdf)
 
 ## How to run it (for judges and players)
 **Option 1 — Online (recommended, nothing to install).** Open the link in the *Play* section above. It works on a phone, a tablet or a computer with a modern browser (Chrome, Edge, Firefox or Safari). No account, no download, no sign-up.
@@ -82,6 +82,21 @@ Start with [docs/README.md](docs/README.md). Prototype rules: [docs/prototype.md
 | Natalia Urban Castillo | Prototype development and Pitch |
 | Valeria de la Rosa Alejandro | Data and source verification; Video game development in JavaScript |
 
-## License
-- Music (`game/assets/audio/music.mp3`): original song by the team. 
+## AI usage
+We used **Claude** (Anthropic) as a coding assistant for the JavaScript game in `game/` (engine, interface, tests and build tools). We also used it to help write the GitHub documentation (this README and the files in `docs/`). The team designed the game, reviewed and tested all the code, and decided every rule.
 
+We used **ChatGPT** (OpenAI) only to find two reference links for the business model (Adopt a Classroom and the Processing Foundation microgrants), which is why they end in `utm_source=chatgpt.com`. The content, costs and analysis of the business model were done by the team.
+
+AI was **not** used for:
+- the Twine prototype (`game/prototype/`)
+- the science texts inside the game, which are written by the team from the official NASA and CSA sources
+- the science research and the NASA / CSA sources
+- the business model text, costs and analysis
+- the presentation, the pitch script and the demo video
+- the art: all drawings (SVG) and sound effects were made by the team
+- the music, which is an original song composed and produced by the team in FL Studio
+
+More detail: [CREDITS.md](CREDITS.md#ai-usage).
+
+## License
+- Music (`game/assets/audio/music.mp3`): original song by the team.
