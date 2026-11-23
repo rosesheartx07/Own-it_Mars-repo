@@ -2,7 +2,7 @@
 
 > **Survive Mars with real science.**
 
-An educational top-down game for kids aged 7–12. The player runs a Martian outpost: keep your health, food and energy up, and decide what to protect when solar storms and dust storms arrive. Every decision has a consequence, and after each decision the game shows the real science behind it.
+An educational top-down game for kids aged 7–15. The player runs a Martian outpost: keep your health, food and energy up, and decide what to protect when solar storms and dust storms arrive. Every decision has a consequence, and after each decision the game shows the real science behind it.
 
 Built for the Space Apps Challenge 2026: *let kids experience the real trade-offs of running a lunar or Martian outpost.*
 
