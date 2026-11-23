@@ -9,7 +9,7 @@ Built for the Space Apps Challenge 2026: *let kids experience the real trade-off
 ## Play
 - **Online:**  [https://rosesheartx07.github.io/Own-it_Mars-repo/](https://rosesheartx07.github.io/Own-it_Mars-repo/)
 - **On your computer:** open `game/dist/mars-outpost.html` in a browser (double-click; no server, account or install needed).
-- **Demo:** [Slides](demo.pdf) · [Watch the 30-second video](https://www.youtube.com/watch?v=W2Hl3ACaWzs)
+- **Demo:** [Slides](demo.pdf) · [Watch the 30-second video](demo-video.md)
 
 ## How to run it (for judges and players)
 **Option 1 — Online (recommended, nothing to install).** Open the link in the *Play* section above. It works on a phone, a tablet or a computer with a modern browser (Chrome, Edge, Firefox or Safari). No account, no download, no sign-up.
@@ -99,4 +99,5 @@ AI was **not** used for:
 More detail: [CREDITS.md](CREDITS.md#ai-usage).
 
 ## License
-- Music (`game/assets/audio/music.mp3`): original song by the team.
+- Music (`game/assets/audio/music.mp3`): original song by the team. 
+
