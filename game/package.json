@@ -3,7 +3,7 @@
   "version": "0.2.0",
   "type": "module",
   "scripts": {
-    "test": "node tests/test.js",
+    "test": "node test/test.js",
     "build": "node tools/build.mjs",
     "export-data": "node tools/export-data.mjs"
   }
