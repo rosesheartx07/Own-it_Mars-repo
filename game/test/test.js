@@ -1,4 +1,4 @@
-// Automated checks for the engine and content. Run: npm test (or node tests/test.js)
+// Automated checks for the engine and content. Run: npm test (or node test/test.js)
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
 import { newState, resolveOption, launchStatus, isStuck, rollEvent, METERS } from '../src/engine/engine.js';
