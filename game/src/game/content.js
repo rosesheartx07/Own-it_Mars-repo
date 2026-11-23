@@ -1,4 +1,4 @@
-// Game content ported from game/prototype/Mission_Trainer.twee (final prototype)
+// Game content ported from game/prototype/Mission Trainer.twee (final prototype)
 // and game/data/events.json + stations.json. Probabilities and costs are design values, not NASA data.
 
 export const SOURCES = {
@@ -33,7 +33,7 @@ const SOLAR_STORM_OPTIONS = [
 ];
 
 const SOLAR_STORM_SCIENCE = {
-  text: 'Sometimes the Sun unleashes a massive explosion that sends very fast-moving particles toward Mars. We call this a solar storm. In September 2017 one reached Mars and lit up an aurora 25 times brighter than normal. Radiation on the ground was twice as high as any earlier measurement.',
+  text: 'Sometimes the Sun unleashes a massive explosion that sends very fast-moving particles toward Mars. We call this a solar storm. In September 2017 one reached Mars and lit up an aurora more than 25 times brighter than any seen before by NASA’s MAVEN orbiter. Radiation on the ground was twice as high as any earlier measurement.',
   source: SOURCES.solarStorm,
 };
 
