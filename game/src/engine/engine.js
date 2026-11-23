@@ -11,7 +11,7 @@ export const METERS = {
 };
 
 export const RULES = {
-  // Minimum food to open the Expedition. Design value, to be tuned in playtests ([X]% in game-design.md).
+  // Minimum food to open the Expedition. Design value, 3 of 5 (60%), see docs/game-design.md.
   minFoodForExpedition: 3,
   // Each meter the ship needs (Equipment is not required, as in the prototype).
   launchNeeds: ['energy', 'food', 'health', 'time', 'data'],
