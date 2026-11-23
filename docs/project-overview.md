@@ -23,3 +23,4 @@ Plain JavaScript (no frameworks, no server). The published game is a single HTML
 - `docs/`: design and documentation.
 - `game/`: game code, data, assets, tests and the Twine prototype.
 - `index.html`: opens the game (used by GitHub Pages).
+
