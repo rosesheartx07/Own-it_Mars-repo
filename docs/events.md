@@ -7,7 +7,7 @@ How the random roll works is in [game-design.md](game-design.md#random-events). 
 Chances, costs and timers are design values, not NASA data.
 
 ## Solar storm (solar panels) — 30 seconds to decide
-**Player text:** Sometimes the Sun unleashes a massive explosion that sends very fast-moving particles toward Mars. We call this a solar storm. In September 2017 one reached Mars and lit up an aurora 25 times brighter than normal. Radiation on the ground was twice as high as any earlier measurement.
+**Player text:** Sometimes the Sun unleashes a massive explosion that sends very fast-moving particles toward Mars. We call this a solar storm. In September 2017 one reached Mars and lit up an aurora more than 25 times brighter than any seen before by NASA’s MAVEN orbiter. Radiation on the ground was twice as high as any earlier measurement.
 
 | Option | Consequence |
 |---|---|
@@ -41,5 +41,6 @@ If the timer runs out the base keeps working as usual.
 2. Give at least two options, and make sure each one has a consequence.
 3. Add an official source and list it in `CREDITS.md`.
 4. Add the event to `EVENTS` in `game/src/game/content.js`, then run `npm run export-data`, `npm test` and `npm run build`.
+
 
 
