@@ -38,3 +38,4 @@ let html = readFileSync(join(root, 'index.html'), 'utf8')
 mkdirSync(join(root, 'dist'), { recursive: true });
 writeFileSync(join(root, 'dist/mars-outpost.html'), html);
 console.log(`dist/mars-outpost.html written (${(html.length / 1024).toFixed(1)} KB)`);
+
