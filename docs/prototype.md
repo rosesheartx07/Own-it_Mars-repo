@@ -1,6 +1,6 @@
 # Prototype notes (Twine → JavaScript)
 
-`game/prototype/Mission_Trainer.twee` is the **final version of the Twine prototype**. It is where the rules were built and tested. The playable game is the JavaScript version in `game/src/`, which was ported from it. This page lists what the prototype does and the decisions taken when it was ported.
+`game/prototype/Mission Trainer.twee` is the **final version of the Twine prototype**. It is where the rules were built and tested. The playable game is the JavaScript version in `game/src/`, which was ported from it. This page lists what the prototype does and the decisions taken when it was ported.
 
 All values are design values, not NASA data.
 
@@ -72,3 +72,4 @@ These were open questions. They are easy to change in `game/src/` (see `game/REA
 - **Game over:** any time Health reaches 0 (radiation on the Expedition, or cold after a dust storm).
 - Meters are kept between 0 and their maximum. `$crew` and `lab_result` were dropped. Typos fixed.
 - The map background is drawn in SVG, so the hotlinked image with unknown license is no longer used.
+
