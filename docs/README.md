@@ -9,13 +9,13 @@ Own it: Mars is an educational top-down game about running a Martian outpost, fo
 4. [Events catalog](events.md)
 5. [Science and data sources](nasa-data-sources.md)
 6. [Limitations](limitations.md)
-7. [Demo](demo.pdf)
-8. [Demo Script](docs/demo-script.pdf)
+7. [Demo slides](../demo.pdf) · [Demo video](../demo-video.md)
+8. [Demo script](demo-script.pdf)
 9. [Status and roadmap](roadmap.md)
 10. [Prototype notes](prototype.md) (Twine version used to test the rules)
 11. [Music and sound](audio.md)
 12. [Hosting and scalability](scalability.md)
-13. [Business Model](docs/business-model.pdf)
+13. [Business model](business-model.pdf)
 
 ## Quick paths
 - **Understand the idea:** Project overview.
@@ -28,4 +28,5 @@ Own it: Mars is an educational top-down game about running a Martian outpost, fo
 - Science content comes only from official sources and is credited inside the game.
 - Game values (probabilities, costs, timers) are design values, not NASA data.
 - Curated content is never presented as live data.
+
 
