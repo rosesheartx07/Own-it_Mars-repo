@@ -9,10 +9,10 @@ src/
   game/     content.js: stations, options, texts and sources. SOURCE OF TRUTH for the content
   ui/       ui.js (map, pop-up windows, meters bar, event pop-ups), art.js (SVG drawings), audio.js (music and sounds), style.css
 data/       events.json, stations.json: GENERATED from content.js (do not edit by hand)
-tests/      test.js: automated checks (npm test)
+test/       test.js: automated checks (npm test)
 tools/      build.mjs (builds dist/), export-data.mjs (writes data/*.json)
 dist/       built single-file game: mars-outpost.html
-prototype/  raw Twine version (Mission_Trainer.twee) used to test the rules
+prototype/  raw Twine version (Mission Trainer.twee) used to test the rules
 assets/     audio/music.mp3 (our song). sprites, tilemaps and ui are empty: the art is SVG and the sound effects are made in code
 ```
 
