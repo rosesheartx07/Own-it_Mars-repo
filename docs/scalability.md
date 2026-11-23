@@ -54,3 +54,4 @@ Assumption: every play loads the full file once (1.94 MB). A returning player wh
 
 ## Plan B
 The game is a single file that works offline. If GitHub Pages is down, the same file can be published on any other static host in minutes, and the README link changed. Keep the second host ready (account created and a tested copy) before the demo day.
+
