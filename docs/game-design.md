@@ -1,6 +1,6 @@
 # Game design
 
-> Probabilities, costs and timers are **design values** to be tuned in playtests. They are not NASA data.
+> Probabilities, costs and timers are **design values**, checked in a playtest with about 10 people (see [limitations.md](limitations.md)). They are not NASA data.
 
 ## Player bars
 Energy (0–10), Food, Equipment, Health and Time (0–5) and Data (0–5, starts at 0), as in the prototype (see [prototype.md](prototype.md)). There is no hunger or thirst: the player does not get weak for missing meals. Food only comes from the Greenhouse.
@@ -78,13 +78,9 @@ Health is the only bar that ends the game. When Health reaches 0 the mission is 
 ## Food requirement for the Expedition (design rule)
 The player does not get hungry or thirsty. Instead, **food is a requirement**: to go on the Expedition the player needs a minimum percentage of food. Food only increases in the Greenhouse, so the player has to take care of the plants before going out.
 
-- Minimum food to open the Expedition: **3 out of 5 (60%)**. This is a design value to be tuned in playtests, not NASA data.
+- Minimum food to open the Expedition: **3 out of 5 (60%)**. This is a design value, not NASA data.
 - If the player does not have enough food, the Expedition stays closed and the game says why and points to the Greenhouse.
 - Food is not lost by skipping meals. It can still go down because of events and failures (for example, spoiled food or lost crops).
 
 ## Dead ends
 If the fast lab analysis wipes all the data, the ship can never launch. The game detects this: the map and the ship say so and offer to start again.
-
-
-
-
