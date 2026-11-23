@@ -93,7 +93,7 @@
       "timeoutOption": "stay_connected",
       "timeoutText": "Time ran out! Nobody switched anything off, so the base stayed connected.",
       "science": {
-        "text": "Sometimes the Sun unleashes a massive explosion that sends very fast-moving particles toward Mars. We call this a solar storm. In September 2017 one reached Mars and lit up an aurora 25 times brighter than normal. Radiation on the ground was twice as high as any earlier measurement.",
+        "text": "Sometimes the Sun unleashes a massive explosion that sends very fast-moving particles toward Mars. We call this a solar storm. In September 2017 one reached Mars and lit up an aurora more than 25 times brighter than any seen before by NASA’s MAVEN orbiter. Radiation on the ground was twice as high as any earlier measurement.",
         "source": {
           "publisher": "NASA / JPL-Caltech",
           "title": "Large Solar Storm Sparks Global Aurora and Doubles Radiation Levels on the Martian Surface",
